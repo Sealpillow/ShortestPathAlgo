@@ -23,22 +23,15 @@ Dijkstra's algorithm allows us to find the shortest path between any two vertice
 </p>
 
 ### Array value showcase
-</p>
-<p float="left">
-    <img src="https://user-images.githubusercontent.com/51332449/190894377-87688c5c-1c72-4329-af74-8ef93a0c4ce5.png" width="500">
-    <img src="https://user-images.githubusercontent.com/51332449/190894452-d21a9abf-64bb-42c8-9114-3527a374b95b.png" width="500"> 
-</p>
 
-<p float="left">
-    <img src="https://user-images.githubusercontent.com/51332449/190894483-59be1941-5274-4968-b1ef-d0521bdbfdcf.png" width="500">
-    <img src="https://user-images.githubusercontent.com/51332449/190894528-154162e1-f3ab-48b4-a021-f61d0e5f568f.png" width="500"> 
-</p>
+<img src="https://user-images.githubusercontent.com/51332449/190895488-3a63dc18-3175-44ad-8238-069809439697.png" width="500">
+<img src="https://user-images.githubusercontent.com/51332449/190895531-194553fc-eaca-44a5-8ed5-6a18c5624ecb.png" width="500"> 
 
-<p float="left">
-    <img src="https://user-images.githubusercontent.com/51332449/190894626-e1bb7315-6808-429f-a9f2-b46e108057f8.png" width="500">
-    <img src="https://user-images.githubusercontent.com/51332449/190894661-57f8c7d0-eb76-40cd-b8f9-8edf01b76899.png" width="500"> 
-</p>
+<img src="https://user-images.githubusercontent.com/51332449/190895544-c34e0084-ddd8-4622-83fd-3c6b39491cbd.png" width="500">
+<img src="https://user-images.githubusercontent.com/51332449/190895569-ed55e150-d07e-4196-9886-7769f351df60.png" width="500"> 
 
+<img src="https://user-images.githubusercontent.com/51332449/190895587-778725d9-6f28-4a0a-8332-dff106c7be70.png" width="500">
+<img src="https://user-images.githubusercontent.com/51332449/190895615-69d9d0dc-d8fe-4915-8a06-94f55367cdb2.png" width="500"> 
 
 
 ### Code
