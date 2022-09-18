@@ -23,7 +23,14 @@ Dijkstra's algorithm allows us to find the shortest path between any two vertice
 </p>
 
 ### Array value showcase
+```
+// next shorted path->find the lowest d[i] that has not been visited
+int u = findMinDistance(distance, visitedVertex); 
 
+// node that has not been visited, and is connected to curr, and (currToStart + currToNext < nextToStart)
+if (!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v]))
+    distance[v] = distance[u] + graph[u][v]; // update shorter path
+```
 <img src="https://user-images.githubusercontent.com/51332449/190895488-3a63dc18-3175-44ad-8238-069809439697.png" width="500">
 <img src="https://user-images.githubusercontent.com/51332449/190895531-194553fc-eaca-44a5-8ed5-6a18c5624ecb.png" width="500"> 
 
