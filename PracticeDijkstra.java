@@ -1,3 +1,4 @@
+// https://www.programiz.com/dsa/dijkstra-algorithm
 import java.util.Arrays;
 
 public class PracticeDijkstra
