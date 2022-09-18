@@ -2,7 +2,7 @@
 // https://www.programiz.com/dsa/dijkstra-algorithm
 import java.util.Arrays;
 
-public class PracticeDijkstra
+public class PracticeDijkstraDisplay
 {
     // Dijkstra's Algorithm in Java
     public static void dijkstra(int[][] graph, int source)
@@ -10,12 +10,12 @@ public class PracticeDijkstra
         int count = graph.length;
         boolean[] visitedVertex = new boolean[count];
         int[] distance = new int[count];
-        // int[] pi = new int[count];
+        int[] pi = new int[count];
         for (int i = 0; i < count; i++)
         {
             visitedVertex[i] = false;
             distance[i] = Integer.MAX_VALUE;
-            //pi[i] = 0;
+            pi[i] = 0;
         }
         System.out.println(Arrays.toString(visitedVertex));
         System.out.println(Arrays.toString(distance));
@@ -37,12 +37,12 @@ public class PracticeDijkstra
                 {
                     System.out.println(v+": " +distance[u]+" "+graph[u][v]);
                     distance[v] = distance[u] + graph[u][v]; // update shorter path
-                    //pi[v] = u;
+                    pi[v] = u;
                 }
             }
             System.out.println(Arrays.toString(visitedVertex));
             System.out.println(Arrays.toString(distance));
-            //System.out.println(Arrays.toString(pi));
+            System.out.println(Arrays.toString(pi));
             System.out.println();
 
         }
