@@ -8,7 +8,6 @@ def PracticeDijkstra(g, source):
     distance[source] = 0
     for i in range(0, count):
         index = minDistance(distance, visited)
-        print(visited)
         visited[index] = True
         for j in range(0, count):
             if not visited[j] and g[index][j] != 0 and (distance[index]+g[index][j] < distance[j]):
