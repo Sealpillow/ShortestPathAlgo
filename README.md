@@ -22,6 +22,19 @@ Dijkstra's algorithm allows us to find the shortest path between any two vertice
     <img src="https://user-images.githubusercontent.com/51332449/190892053-ce29f31a-40b4-417c-9693-81a6374ea13f.png" width="500"> 
 </p>
 
+### Array value showcase
+</p>
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/51332449/190894377-87688c5c-1c72-4329-af74-8ef93a0c4ce5.png" width="500">
+    <img src="https://user-images.githubusercontent.com/51332449/190894452-d21a9abf-64bb-42c8-9114-3527a374b95b.png" width="500"> 
+</p>
+
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/51332449/190894483-59be1941-5274-4968-b1ef-d0521bdbfdcf.png" width="500">
+    <img src="https://user-images.githubusercontent.com/51332449/190894528-154162e1-f3ab-48b4-a021-f61d0e5f568f.png" width="500"> 
+</p>
+
+
 
 
 
