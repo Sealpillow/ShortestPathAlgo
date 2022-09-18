@@ -34,7 +34,10 @@ Dijkstra's algorithm allows us to find the shortest path between any two vertice
     <img src="https://user-images.githubusercontent.com/51332449/190894528-154162e1-f3ab-48b4-a021-f61d0e5f568f.png" width="500"> 
 </p>
 
-
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/51332449/190894626-e1bb7315-6808-429f-a9f2-b46e108057f8.png" width="500">
+    <img src="https://user-images.githubusercontent.com/51332449/190894661-57f8c7d0-eb76-40cd-b8f9-8edf01b76899.png" width="500"> 
+</p>
 
 
 
