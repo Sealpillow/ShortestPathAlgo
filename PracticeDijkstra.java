@@ -15,7 +15,7 @@ public class PracticeDijkstra
             distance[i] = Integer.MAX_VALUE;
         }
         // Distance of self loop is zero
-        distance[source] = 0;
+        distance[source] = 0;  // so that dist[] can be initialised from source in the for loop()
         for (int i = 0; i < count; i++)
         {
             // Update the distance between neighbouring vertex and source vertex
