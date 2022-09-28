@@ -19,7 +19,7 @@ def minDistance(distance, visited):
     min = sys.maxsize
     minindex = -1
     for x in range(len(distance)):
-        if not visited[x] and (distance[x] < min):
+        if not visited[x] and (distance[x] <=min):
             min = distance[x]
             minindex = x
     return minindex
