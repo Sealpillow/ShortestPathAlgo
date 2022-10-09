@@ -7,7 +7,9 @@
 2. [Prim's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#prims-algorithm)
     - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-1)
     - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-1)
-    
+3. [Kruskal's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#kruskals-algorithm)
+    - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-2)
+    - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-2)
 ## Dijkstra's Algorithm
 ### Understanding
 
@@ -233,4 +235,161 @@ public class PracticePrim
 
 }
 
+```
+## Kruskal's Algorithm
+### Understanding
+
+We start from the edges with the lowest weight and keep adding edges until we reach our goal.
+The steps for implementing Kruskal's algorithm are as follows:
+
+- Sort all the edges from low weight to high
+- Take the edge with the lowest weight and add it to the spanning tree. If adding the edge created a cycle, then reject this edge.
+- Keep adding edges until we reach all vertices.
+```
+Overview
+
+```
+
+<img src="https://user-images.githubusercontent.com/51332449/194752160-eb3632cd-c761-4f2a-b459-0fad5ec47799.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194752189-f7133be4-ec12-4552-91a1-daefc9416418.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194752195-94343a74-244e-4de1-829f-9a58e06228c2.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194752215-6247df66-b7ee-44c7-ace3-aa892aa798ba.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194752222-88718739-921f-4590-b00a-a2028de98b55.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194752231-2cab979f-aaec-46f0-b92e-104ecb61cd95.png" width="500"> 
+
+
+### Code
+```
+package ShortestPath;// Kruskal's algorithm in Java
+
+import java.util.*;
+class PracticeKruskal {
+    static class Edge implements Comparable<Edge>
+    {
+        int src, dest, weight;
+        public int compareTo(Edge compareEdge)
+        {
+            return this.weight - compareEdge.weight;
+        }
+    };
+
+    // Union
+    static class subset
+    {
+        int parent, rank;
+    };
+
+    int vertices, edges;
+    Edge[] edge;
+
+    // graph creation
+    PracticeKruskal(int v, int e)
+    {
+        vertices = v;
+        edges = e;
+        edge = new Edge[edges];
+        for (int i = 0; i < e; ++i)
+            edge[i] = new Edge();
+    }
+
+    int find(subset[] subsets, int i)
+    {
+        if (subsets[i].parent != i)
+            subsets[i].parent = find(subsets, subsets[i].parent);
+        return subsets[i].parent;
+    }
+
+    void Union(subset[] subsets, int x, int y)
+    {
+        int xroot = find(subsets, x);
+        int yroot = find(subsets, y);
+
+        if (subsets[xroot].rank < subsets[yroot].rank)
+            subsets[xroot].parent = yroot;
+        else if (subsets[xroot].rank > subsets[yroot].rank)
+            subsets[yroot].parent = xroot;
+        else
+        {
+            subsets[yroot].parent = xroot;
+            subsets[xroot].rank++;
+        }
+    }
+
+    // Applying Krushkal Algorithm
+    void KruskalAlgo()
+    {
+        Edge[] result = new Edge[vertices];
+        int e = 0;
+        int i = 0;
+        for (i = 0; i < vertices; ++i)
+            result[i] = new Edge();
+
+        // Sorting the edges
+        Arrays.sort(edge);
+        subset[] subsets = new subset[vertices];
+        for (i = 0; i < vertices; ++i)
+            subsets[i] = new subset();
+
+        for (int v = 0; v < vertices; ++v)
+        {
+            subsets[v].parent = v;
+            subsets[v].rank = 0;
+        }
+        i = 0;
+        while (e < vertices - 1)
+        {
+            Edge next_edge = new Edge();
+            next_edge = edge[i++];
+            int x = find(subsets, next_edge.src);
+            int y = find(subsets, next_edge.dest);
+            if (x != y)
+            {
+                result[e++] = next_edge;
+                Union(subsets, x, y);
+            }
+        }
+        for (i = 0; i < e; ++i)
+            System.out.println(result[i].src + " - " + result[i].dest + ": " + result[i].weight);
+    }
+
+    public static void main(String[] args)
+    {
+        int vertices = 6; // Number of vertices
+        int edges = 8; // Number of edges
+        PracticeKruskal G = new PracticeKruskal(vertices, edges);
+
+        G.edge[0].src = 0;
+        G.edge[0].dest = 1;
+        G.edge[0].weight = 4;
+
+        G.edge[1].src = 0;
+        G.edge[1].dest = 2;
+        G.edge[1].weight = 4;
+
+        G.edge[2].src = 1;
+        G.edge[2].dest = 2;
+        G.edge[2].weight = 2;
+
+        G.edge[3].src = 2;
+        G.edge[3].dest = 3;
+        G.edge[3].weight = 3;
+
+        G.edge[4].src = 2;
+        G.edge[4].dest = 5;
+        G.edge[4].weight = 2;
+
+        G.edge[5].src = 2;
+        G.edge[5].dest = 4;
+        G.edge[5].weight = 4;
+
+        G.edge[6].src = 3;
+        G.edge[6].dest = 4;
+        G.edge[6].weight = 3;
+
+        G.edge[7].src = 5;
+        G.edge[7].dest = 4;
+        G.edge[7].weight = 3;
+        G.KruskalAlgo();
+    }
+}
 ```
