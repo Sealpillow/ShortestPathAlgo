@@ -40,7 +40,6 @@ if (!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distan
 <img src="https://user-images.githubusercontent.com/51332449/190895587-778725d9-6f28-4a0a-8332-dff106c7be70.png" width="500">
 <img src="https://user-images.githubusercontent.com/51332449/190895615-69d9d0dc-d8fe-4915-8a06-94f55367cdb2.png" width="500"> 
 
-
 ### Code
 ```
 public class PracticeDijkstra
@@ -137,6 +136,7 @@ Overview:
 <img src="https://user-images.githubusercontent.com/51332449/194746354-8642817f-008a-4bb2-a2c8-21259fc1d5ea.png" width="500"> 
 <img src="https://user-images.githubusercontent.com/51332449/194746388-cb2b544e-1135-4359-af8b-68b09a0db374.png" width="500"> 
 <img src="https://user-images.githubusercontent.com/51332449/194746399-3699d236-1ca3-4a8b-bccc-215e493ffc17.png" width="500"> 
+
 ### Code
 ```
 import java.util.Arrays;
