@@ -109,3 +109,40 @@ public class PracticeDijkstra
 }
 
 ```
+
+
+## Prim's Algorithm
+### Understanding
+
+Prim's algorithm is a minimum spanning tree algorithm that takes a graph as input and finds the subset of the edges of that graph which
+
+- form a tree that includes every vertex
+- has the minimum sum of weights among all the trees that can be formed from the graph
+```
+Overview:
+1. start from source, initialise selected[source] = true
+2. find destination with connection with the source
+3. find the lowest weighted edge from the source to the destination
+4. if found -> min = g[v][e] -> selected[e] = true -> edge++
+5. iterate through vertex that has selected[] = true
+6. find the next lowest weighted edge from the vertex that has selected[] = true
+7. if found -> min = g[v][e] -> selected[e] = true -> edge++
+8. continue till edge = V-1;
+```
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/51332449/190891958-7fe2c03c-ed9f-4c45-8185-727aa7453594.png" width="500"> 
+    <img src="https://user-images.githubusercontent.com/51332449/190891978-a3c1e604-de8a-4e9c-995b-ba4aa1db3edf.png" width="500"> 
+</p>  
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/51332449/190891986-bd201849-50d7-4be9-9c43-d77bed9e54e5.png" width="500"> 
+    <img src="https://user-images.githubusercontent.com/51332449/190892274-124f8526-7c1c-401f-94fe-00d46c65b7cb.png" width="500"> 
+</p>
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/51332449/190892018-c7b221e9-8a39-45b9-b50f-869e4e784fa9.png" width="500"> 
+    <img src="https://user-images.githubusercontent.com/51332449/190892032-3480d7aa-275b-464e-ac00-3b37f093f63c.png" width="500"> 
+</p>
+<p float="left">
+    <img src="https://user-images.githubusercontent.com/51332449/190892040-cdbdc824-607f-4575-969c-62690f070662.png" width="500">
+    <img src="https://user-images.githubusercontent.com/51332449/190892053-ce29f31a-40b4-417c-9693-81a6374ea13f.png" width="500"> 
+</p>
+
