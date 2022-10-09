@@ -129,20 +129,100 @@ Overview:
 7. if found -> min = g[v][e] -> selected[e] = true -> edge++
 8. continue till edge = V-1;
 ```
-<p float="left">
-    <img src="https://user-images.githubusercontent.com/51332449/190891958-7fe2c03c-ed9f-4c45-8185-727aa7453594.png" width="500"> 
-    <img src="https://user-images.githubusercontent.com/51332449/190891978-a3c1e604-de8a-4e9c-995b-ba4aa1db3edf.png" width="500"> 
-</p>  
-<p float="left">
-    <img src="https://user-images.githubusercontent.com/51332449/190891986-bd201849-50d7-4be9-9c43-d77bed9e54e5.png" width="500"> 
-    <img src="https://user-images.githubusercontent.com/51332449/190892274-124f8526-7c1c-401f-94fe-00d46c65b7cb.png" width="500"> 
-</p>
-<p float="left">
-    <img src="https://user-images.githubusercontent.com/51332449/190892018-c7b221e9-8a39-45b9-b50f-869e4e784fa9.png" width="500"> 
-    <img src="https://user-images.githubusercontent.com/51332449/190892032-3480d7aa-275b-464e-ac00-3b37f093f63c.png" width="500"> 
-</p>
-<p float="left">
-    <img src="https://user-images.githubusercontent.com/51332449/190892040-cdbdc824-607f-4575-969c-62690f070662.png" width="500">
-    <img src="https://user-images.githubusercontent.com/51332449/190892053-ce29f31a-40b4-417c-9693-81a6374ea13f.png" width="500"> 
-</p>
 
+
+<img src="https://user-images.githubusercontent.com/51332449/194746280-e26ddadf-70b9-4c3c-81ff-a91928895bf9.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746315-4d81232a-cc17-4145-a812-4e4f651ead96.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746335-43dcd1ec-c291-44c0-a04f-9c14b14ebaff.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746354-8642817f-008a-4bb2-a2c8-21259fc1d5ea.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746388-cb2b544e-1135-4359-af8b-68b09a0db374.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746399-3699d236-1ca3-4a8b-bccc-215e493ffc17.png" width="500"> 
+### Code
+```
+import java.util.Arrays;
+public class PracticePrim
+{
+    public static void Prim(int[][] G, int vertex)
+    {
+
+        int INF = Integer.MAX_VALUE;
+
+        int edge; // number of edge
+
+        // create an array to track selected vertex
+        // selected will become true otherwise false
+        boolean[] selected = new boolean[vertex];
+
+        // set selected false initially
+        Arrays.fill(selected, false);
+
+        // set number of edge to 0
+        edge = 0;
+
+        // the number of edge in minimum spanning tree will be
+        // always less than (V -1), where V is number of vertices in
+        // graph
+
+        // choose 0th vertex and make it true
+        selected[0] = true;
+
+        // print for edge and weight
+        System.out.println("Edge : Weight");
+
+        while (edge < vertex - 1)
+        {
+            // For every vertex in the set S, find the all adjacent vertices,
+            // calculate the distance from the vertex selected at step 1.
+            // if the vertex is already in the set S, discard it otherwise
+            // choose another vertex nearest to selected vertex at step 1.
+
+            int min = INF;
+            int s = 0; // row number
+            int d = 0; // col number
+
+            for (int source = 0; source < vertex; source++)
+            {
+                if (selected[source])
+                {
+                    for (int destination = 0; destination < vertex; destination++)
+                    {
+                        // not in selected and there is an edge
+                        if (!selected[destination] && G[source][destination] != 0)
+                        {
+                            //System.out.println(i+" "+j+" " +G[i][j]);
+                            if (min > G[source][destination])
+                            {
+                                min = G[source][destination];
+                                s = source;
+                                d = destination;
+                            }
+                        }
+                    }
+                }
+            }
+            System.out.println(s + " - " + d + " :  " + G[s][d]);
+            selected[d] = true;
+            edge++;
+        }
+    }
+
+    public static void main(String[] args)
+    {
+
+        // number of vertices in graph
+        int vertex = 5;
+
+        // create a 2d array of size 5x5
+        // for adjacency matrix to represent graph
+        int[][] G = { { 0, 9, 75, 0, 0 },
+                      { 9, 0, 95, 19, 42 },
+                      { 75, 95, 0, 51, 66 },
+                      { 0, 19, 51, 0, 31 },
+                      { 0, 42, 66, 31, 0 } };
+
+        Prim(G, vertex);
+    }
+
+}
+
+```
