@@ -138,6 +138,10 @@ Overview:
 7. if found -> min = g[v][e] -> selected[e] = true -> edge++
 8. continue till edge = V-1;
 ```
+```
+Time Complexity: O(E log V).
+```
+
 
 
 <img src="https://user-images.githubusercontent.com/51332449/194746280-e26ddadf-70b9-4c3c-81ff-a91928895bf9.png" width="500"> 
@@ -248,6 +252,9 @@ The steps for implementing Kruskal's algorithm are as follows:
 ```
 Overview
 
+```
+```
+Time Complexity: O(E log E).
 ```
 
 <img src="https://user-images.githubusercontent.com/51332449/194752160-eb3632cd-c761-4f2a-b459-0fad5ec47799.png" width="500"> 
@@ -393,3 +400,6 @@ class PracticeKruskal {
     }
 }
 ```
+Source:
+https://www.programiz.com/dsa/kruskal-algorithm
+https://www.programiz.com/dsa/prim-algorithm
