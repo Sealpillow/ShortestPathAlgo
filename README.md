@@ -270,6 +270,14 @@ Time Complexity: O(E log E).
 package ShortestPath;// Kruskal's algorithm in Java
 
 import java.util.*;
+
+
+// We start from the edges with the lowest weight and keep adding edges until we reach our goal.
+// The steps for implementing Kruskal's algorithm are as follows:
+//
+//Sort all the edges from low weight to high
+//Take the edge with the lowest weight and add it to the spanning tree. If adding the edge created a cycle, then reject this edge.
+//Keep adding edges until we reach all vertices.
 class PracticeKruskal {
     static class Edge implements Comparable<Edge>
     {
@@ -299,7 +307,7 @@ class PracticeKruskal {
             edge[i] = new Edge();
     }
 
-    int find(subset[] subsets, int i)
+    int find(subset[] subsets, int i) // find the parent of subset[i]
     {
         if (subsets[i].parent != i)
             subsets[i].parent = find(subsets, subsets[i].parent);
@@ -328,31 +336,32 @@ class PracticeKruskal {
         Edge[] result = new Edge[vertices];
         int e = 0;
         int i = 0;
-        for (i = 0; i < vertices; ++i)
+        for (i = 0; i < vertices; ++i) // result[] contains all edge for min span tree (MST)
             result[i] = new Edge();
 
-        // Sorting the edges
+        // Sorting the edges, edge[0] to have the lowest weight
         Arrays.sort(edge);
         subset[] subsets = new subset[vertices];
         for (i = 0; i < vertices; ++i)
             subsets[i] = new subset();
 
+        // initialise union
         for (int v = 0; v < vertices; ++v)
         {
-            subsets[v].parent = v;
+            subsets[v].parent = v;  // each vertex is its own parent
             subsets[v].rank = 0;
         }
         i = 0;
-        while (e < vertices - 1)
+        while (e < vertices - 1) 
         {
             Edge next_edge = new Edge();
-            next_edge = edge[i++];
-            int x = find(subsets, next_edge.src);
-            int y = find(subsets, next_edge.dest);
-            if (x != y)
+            next_edge = edge[i++]; // looping through sorted edge[]
+            int x = find(subsets, next_edge.src); // parent of x
+            int y = find(subsets, next_edge.dest); // parent of y
+            if (x != y) // if source and destination does not have the same parent as it may result in a cycle
             {
-                result[e++] = next_edge;
-                Union(subsets, x, y);
+                result[e++] = next_edge; // the edge is one of the min span tree
+                Union(subsets, x, y);    // connect between x and y
             }
         }
         for (i = 0; i < e; ++i)
@@ -365,9 +374,10 @@ class PracticeKruskal {
         int edges = 8; // Number of edges
         PracticeKruskal G = new PracticeKruskal(vertices, edges);
 
-        G.edge[0].src = 0;
-        G.edge[0].dest = 1;
-        G.edge[0].weight = 4;
+        // adding array of edges
+        G.edge[0].src = 0;      // source
+        G.edge[0].dest = 1;     // destination
+        G.edge[0].weight = 4;   // the weight from source to destination
 
         G.edge[1].src = 0;
         G.edge[1].dest = 2;
