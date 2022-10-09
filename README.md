@@ -1,5 +1,10 @@
 # ShortestPathAlgo
-
+1.[Dijkstra's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#dijkstras-algorithm)
+    - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding)
+    - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code)
+2.[Prim's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#prims-algorithm)
+    - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-1)
+    - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-1)
 ## Dijkstra's Algorithm
 ### Understanding
 
