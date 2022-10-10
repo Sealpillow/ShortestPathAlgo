@@ -7,9 +7,12 @@
 2. [Prim's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#prims-algorithm)
     - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-1)
     - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-1)
-3. [Kruskal's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#kruskals-algorithm)
+4. [UnionFind's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#unionfinds-algorithm)
     - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-2)
-    - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-2)
+    - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-2)    
+3. [Kruskal's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#kruskals-algorithm)
+    - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-3)
+    - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-3)
 ## Dijkstra's Algorithm
 ### Understanding
 
@@ -237,6 +240,82 @@ public class PracticePrim
         Prim(G, vertex);
     }
 
+}
+
+```
+## UnionFind's Algorithm
+### Understanding
+
+Union: connect two objects.
+Find: check if there is a path connecting the two objects
+```
+Overview
+value in the array represent the parent of the arr[i]
+union(arr,n,0,1); // making arr[1] the parent of arr[0]
+if(arr[i] == 0)
+since arr[0] = 0;
+-> arr[0] = arr[1]
+-> arr[0] = 1
+making arr[1] the parent of arr[0]
+
+union(arr,n,1,2);
+if(arr[i] == 1)
+since arr[0] = 1 and arr[1] = 1
+-> arr[0] = arr[2] and arr[1] = arr[2];
+-> arr[0] = 2 and arr[1] = 2;
+making arr[2] the parent of arr[1] and arr[0]
+
+to find if they are connected,
+find(arr,0,1)
+since arr[1] and arr[2] == 2
+they are connected hence return true
+
+```
+<img src="https://user-images.githubusercontent.com/51332449/194801814-e27f01a2-d85f-44b6-a75b-a5727a3585c8.png" width="500"> 
+
+### Code
+```
+package ShortestPath;
+
+public class PracticeUnionFind
+{
+
+    //returns true,if A and B are connected, else it will return false.
+    static boolean find( int[] arr, int A, int B)
+    {
+        // if greatest parents is the same, hence related(connected)
+        return arr[A] == arr[B];
+    }
+    //change all entries from arr[A] to arr[B].
+    static void union(int[] arr, int n, int A, int B) // assigning arr[B] parent to arr[A]
+    {
+        int temp = arr[A];
+        for(int i = 0; i < n;i++)
+        {
+            if(arr[i] == temp) // find arr[i] that is related to arr[A]
+            {
+                arr[i] = arr[B];  // set the new greater parent
+            }
+
+        }
+    }
+    public static void main (String[] args)
+    {
+        // initialise
+        int n = 7;
+        int[] arr= new int[n];
+        for(int i = 0;i<n;i++)
+            arr[i] = i ; // set arr[i] to its index
+        union(arr,n,0,1);
+        union(arr,n,1,2);
+        union(arr,n,3,4);
+        union(arr,n,4,5);
+        union(arr,n,5,6);
+        System.out.println(find(arr,0,1));
+        System.out.println(find(arr,2,3));
+        System.out.println(find(arr,1,2));
+        System.out.println(find(arr,3,6));
+    }
 }
 
 ```
