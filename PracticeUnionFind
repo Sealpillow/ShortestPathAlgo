@@ -1,0 +1,44 @@
+package ShortestPath;
+
+public class PracticeUnionFind
+{
+
+    //returns true,if A and B are connected, else it will return false.
+    static boolean find( int[] arr, int A, int B)
+    {
+        // if greatest parents is the same, hence related(connected)
+        return arr[A] == arr[B];
+    }
+    //change all entries from arr[A] to arr[B].
+    static void union(int[] arr, int n, int A, int B) // assigning arr[B] parent to arr[A]
+    {
+        int temp = arr[A];
+        for(int i = 0; i < n;i++)
+        {
+            if(arr[i] == temp) // find arr[i] that is related to arr[A]
+            {
+                arr[i] = arr[B];  // set the new greater parent
+            }
+
+        }
+    }
+    public static void main (String[] args)
+    {
+        // initialise
+        int n = 7;
+        int[] arr= new int[n];
+        for(int i = 0;i<n;i++)
+            arr[i] = i ; // set arr[i] to its index
+        union(arr,n,0,1);
+        union(arr,n,1,2);
+        union(arr,n,3,4);
+        union(arr,n,4,5);
+        union(arr,n,5,6);
+        System.out.println(find(arr,0,1));
+        System.out.println(find(arr,2,3));
+        System.out.println(find(arr,1,2));
+        System.out.println(find(arr,3,6));
+    }
+
+}
+
