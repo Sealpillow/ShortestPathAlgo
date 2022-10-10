@@ -330,7 +330,6 @@ The steps for implementing Kruskal's algorithm are as follows:
 - Keep adding edges until we reach all vertices.
 ```
 Overview
-
 ```
 ```
 Time Complexity: O(E log E).
@@ -350,13 +349,6 @@ package ShortestPath;// Kruskal's algorithm in Java
 
 import java.util.*;
 
-
-// We start from the edges with the lowest weight and keep adding edges until we reach our goal.
-// The steps for implementing Kruskal's algorithm are as follows:
-//
-//Sort all the edges from low weight to high
-//Take the edge with the lowest weight and add it to the spanning tree. If adding the edge created a cycle, then reject this edge.
-//Keep adding edges until we reach all vertices.
 class PracticeKruskal {
     static class Edge implements Comparable<Edge>
     {
