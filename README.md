@@ -127,9 +127,8 @@ public class PracticeDijkstra
 ### Understanding
 
 Prim's algorithm is a minimum spanning tree algorithm that takes a graph as input and finds the subset of the edges of that graph which
-
-- form a tree that includes every vertex
-- has the minimum sum of weights among all the trees that can be formed from the graph
+- form a tree that includes every vertex <br/>
+- has the minimum sum of weights among all the trees that can be formed from the graph<br/>
 <img src="https://user-images.githubusercontent.com/51332449/194746280-e26ddadf-70b9-4c3c-81ff-a91928895bf9.png" width="500"> 
 <img src="https://user-images.githubusercontent.com/51332449/194746315-4d81232a-cc17-4145-a812-4e4f651ead96.png" width="500"> 
 <img src="https://user-images.githubusercontent.com/51332449/194746335-43dcd1ec-c291-44c0-a04f-9c14b14ebaff.png" width="500"> 
@@ -147,6 +146,7 @@ Overview:
 7. if found -> min = g[v][e] -> selected[e] = true -> edge++
 8. continue till edge = V-1;
 ```
+
 ```
 Time Complexity: O(E log V).
 ```
