@@ -134,7 +134,8 @@ Prim's algorithm is a minimum spanning tree algorithm that takes a graph as inpu
 <img src="https://user-images.githubusercontent.com/51332449/194746335-43dcd1ec-c291-44c0-a04f-9c14b14ebaff.png" width="500"> 
 <img src="https://user-images.githubusercontent.com/51332449/194746354-8642817f-008a-4bb2-a2c8-21259fc1d5ea.png" width="500"> 
 <img src="https://user-images.githubusercontent.com/51332449/194746388-cb2b544e-1135-4359-af8b-68b09a0db374.png" width="500"> 
-<img src="https://user-images.githubusercontent.com/51332449/194746399-3699d236-1ca3-4a8b-bccc-215e493ffc17.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746399-3699d236-1ca3-4a8b-bccc-215e493ffc17.png" width="500"> <br/>
+
 ```
 Overview:
 1. start from source, initialise selected[source] = true
