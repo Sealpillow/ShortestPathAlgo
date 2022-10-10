@@ -130,6 +130,12 @@ Prim's algorithm is a minimum spanning tree algorithm that takes a graph as inpu
 
 - form a tree that includes every vertex
 - has the minimum sum of weights among all the trees that can be formed from the graph
+<img src="https://user-images.githubusercontent.com/51332449/194746280-e26ddadf-70b9-4c3c-81ff-a91928895bf9.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746315-4d81232a-cc17-4145-a812-4e4f651ead96.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746335-43dcd1ec-c291-44c0-a04f-9c14b14ebaff.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746354-8642817f-008a-4bb2-a2c8-21259fc1d5ea.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746388-cb2b544e-1135-4359-af8b-68b09a0db374.png" width="500"> 
+<img src="https://user-images.githubusercontent.com/51332449/194746399-3699d236-1ca3-4a8b-bccc-215e493ffc17.png" width="500"> 
 ```
 Overview:
 1. start from source, initialise selected[source] = true
@@ -144,15 +150,6 @@ Overview:
 ```
 Time Complexity: O(E log V).
 ```
-
-
-
-<img src="https://user-images.githubusercontent.com/51332449/194746280-e26ddadf-70b9-4c3c-81ff-a91928895bf9.png" width="500"> 
-<img src="https://user-images.githubusercontent.com/51332449/194746315-4d81232a-cc17-4145-a812-4e4f651ead96.png" width="500"> 
-<img src="https://user-images.githubusercontent.com/51332449/194746335-43dcd1ec-c291-44c0-a04f-9c14b14ebaff.png" width="500"> 
-<img src="https://user-images.githubusercontent.com/51332449/194746354-8642817f-008a-4bb2-a2c8-21259fc1d5ea.png" width="500"> 
-<img src="https://user-images.githubusercontent.com/51332449/194746388-cb2b544e-1135-4359-af8b-68b09a0db374.png" width="500"> 
-<img src="https://user-images.githubusercontent.com/51332449/194746399-3699d236-1ca3-4a8b-bccc-215e493ffc17.png" width="500"> 
 
 ### Code
 ```
@@ -245,11 +242,13 @@ public class PracticePrim
 ```
 ## UnionFind's Algorithm
 ### Understanding
+<img src="https://user-images.githubusercontent.com/51332449/194801814-e27f01a2-d85f-44b6-a75b-a5727a3585c8.png" width="500"> 
 
-Union: connect two objects.
-Find: check if there is a path connecting the two objects
 ```
 Overview
+Union: connect two objects.
+Find: check if there is a path connecting the two objects
+
 value in the array represent the parent of the arr[i]
 union(arr,n,0,1); // making arr[1] the parent of arr[0]
 if(arr[i] == 0)
@@ -271,7 +270,6 @@ since arr[1] and arr[2] == 2
 they are connected hence return true
 
 ```
-<img src="https://user-images.githubusercontent.com/51332449/194801814-e27f01a2-d85f-44b6-a75b-a5727a3585c8.png" width="500"> 
 
 ### Code
 ```
