@@ -144,6 +144,7 @@ Overview:
 3. find the lowest weighted edge from the source to the destination
 4. if found -> min = g[v][e] -> selected[e] = true -> edge++
 5. iterate through vertex that has selected[] = true
+e.g node A,B: selected[] = true, find the next min edge from A and B   
 6. find the next lowest weighted edge from the vertex that has selected[] = true
 7. if found -> min = g[v][e] -> selected[e] = true -> edge++
 8. continue till edge = V-1;
