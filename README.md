@@ -40,6 +40,7 @@ Dijkstra's algorithm allows us to find the shortest path between any two vertice
 // next shorted path->find the lowest d[i] that has not been visited
 int u = findMinDistance(distance, visitedVertex); 
 
+// update distance array by checking d[current]+  graph[u][v] < d[destination]
 // node that has not been visited, and is connected to curr, and (currToStart + currToNext < nextToStart)
 if (!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v]))
     distance[v] = distance[u] + graph[u][v]; // update shorter path
