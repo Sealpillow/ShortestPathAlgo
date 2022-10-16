@@ -10,6 +10,9 @@
 4. [UnionFind's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#unionfinds-algorithm)
     - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-2)
     - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-2)    
+    - [QuickFind](https://github.com/Sealpillow/ShortestPathAlgo#quickfind)
+    - [QuickUnion](https://github.com/Sealpillow/ShortestPathAlgo#quickunion)
+    - [WeightedQuickUnion](https://github.com/Sealpillow/ShortestPathAlgo#weightedquickunion)
 3. [Kruskal's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#kruskals-algorithm)
     - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-3)
     - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-3)
@@ -318,8 +321,71 @@ public class PracticeUnionFind
         System.out.println(find(arr,3,6));
     }
 }
+### QuickFind
 
 ```
+find(p): what is the id of p?
+• id[6] = 0; id[1] = 1
+  connected(p, q): do p and q have the same id? 
+• 6 and 1 are not connected
+  union(p, q): change all entries whose id equals id[p] to id[q]
+static void QuickFind(int[] arr, int n, int A, int B) // assigning arr[B] parent to arr[A]
+{
+    int temp = arr[A];
+    for(int i = 0; i < n;i++)
+    {
+        if(arr[i] == temp) // find arr[i] that is related to arr[A]
+        {
+            arr[i] = arr[B];  // set the new greater parent
+        }
+    }
+}
+```
+### QuickUnion
+```
+find(p): what is the root of p?
+connected(p, q): do p and q
+have the same root? 
+union(p, q): set the id of p’s 
+root to the id of q’s root
+
+public static void QuickUnion(int p, int q)
+{
+    int a = root(p);
+    int b = root(q);
+    id[a] = b;
+    sz[b] += sz[a];
+}
+```
+
+### WeightedQuickUnion
+```
+• Extra array sz[i] to count no. of objects in the tree rooted at i.
+  find() and connect()
+• Same as QuickUnion
+  union()
+• Make smaller tree lower
+• Update the array sz[ ]
+
+public static void weightedqQuickUnion(int p, int q)
+{
+    int a = root(p);
+    int b = root(q);
+    if(sz[a]<sz[b]) // weighted
+    {
+        id[a] = b;
+        sz[b] += sz[a];
+    }
+    else
+    {
+        id[b] = a;
+        sz[a] += sz[b];
+    }
+}
+
+```
+
+
 ## Kruskal's Algorithm
 ### Understanding
 
