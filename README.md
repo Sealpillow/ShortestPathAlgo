@@ -321,8 +321,10 @@ public class PracticeUnionFind
         System.out.println(find(arr,3,6));
     }
 }
-### QuickFind
 
+```
+
+### QuickFind
 ```
 find(p): what is the id of p?
 • id[6] = 0; id[1] = 1
