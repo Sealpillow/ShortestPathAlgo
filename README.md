@@ -20,7 +20,15 @@
 ### Understanding
 
 Dijkstra's algorithm allows us to find the shortest path between any two vertices of a graph.
+```
+Time Complexities
 
+Adjacent matrix: (V^2)
+
+
+Adjacent list: (ElogV)
+
+```
 <p float="left">
     <img src="https://user-images.githubusercontent.com/51332449/190891958-7fe2c03c-ed9f-4c45-8185-727aa7453594.png" width="500"> 
     <img src="https://user-images.githubusercontent.com/51332449/190891978-a3c1e604-de8a-4e9c-995b-ba4aa1db3edf.png" width="500"> 
