@@ -16,6 +16,7 @@
 3. [Kruskal's Algorithm](https://github.com/Sealpillow/ShortestPathAlgo#kruskals-algorithm)
     - [Understanding](https://github.com/Sealpillow/ShortestPathAlgo#understanding-3)
     - [Code](https://github.com/Sealpillow/ShortestPathAlgo#code-3)
+4. [Question](https://github.com/Sealpillow/ShortestPathAlgo#question)
 ## Dijkstra's Algorithm
 ### Understanding
 
@@ -557,6 +558,44 @@ class PracticeKruskal {
         G.KruskalAlgo();
     }
 }
+```
+## Question
+```
+1. Give a scenario that Dijkstra’s algorithm doesn’t work 
+Ans: Where there is negative weight in the graph
+2	Space complexity of Dijkstra’s algorithm O(?) 
+-	adjacency matrix  Ans: V^2
+-	adjacency list + min heap Ans: VlogE 
+
+3	Does Dijkstra’s algorithm work for both directed & undirected graph?
+Ans: yes
+
+4. what is the difference between Dijkstra and Prim?
+Ans: Dijkstra’s algorithm finds the shortest path, but Prim’s algorithm finds the MST
+Dijkstra’s algorithm can work on both directed and undirected graphs, but Prim’s algorithm only works on undirected graphs
+Prim’s algorithm can handle negative edge weights, but Dijkstra’s algorithm may fail to accurately compute distances if at least one negative edge weight exists
+
+4. What is a minimum spanning tree?
+Ans: minimum spanning tree is a subset of the edges of a connected, undirected graph that connects all the vertices together with the minimum possible total weight.
+
+
+5. Is it possible to have more than one minimum spanning tree for a given graph? 
+Ans:It is possible to have more than one minimum spanning tree for a given graph. This can happen if there are multiple edges with the same weight. In this case, any of those edges could be removed and the resulting tree would still be a minimum spanning tree.
+
+6. How to construct a minimum spanning tree step by step using Kruskal’s algorithm? 
+Ans: one of the most popular is Kruskal’s algorithm. This algorithm works by first sorting the edges of the graph by weight. It then starts with the edge with the smallest weight and adds it to the tree. It then looks at the next edge in the sorted list and adds it to the tree if it doesn’t create a cycle. This process is repeated until all of the edges have been added to the tree.
+
+7. How to check if there exists a cycle in a minimum spanning tree? 
+Ans: The best way to check if there exists a cycle in a minimum spanning tree is to use a depth-first search algorithm. This algorithm will start at a vertex and explore as far as possible along each branch before backtracking. If the algorithm ever visits a vertex that has already been visited, then there is a cycle in the tree.
+
+8. How does Prim’s algorithm differ from Kruskal’s algorithm? 
+Ans: Prim’s algorithm is a greedy algorithm that builds the minimum spanning tree by starting with a single vertex and adding in edges until all vertices are included. Kruskal’s algorithm is also a greedy algorithm, but it builds the minimum spanning tree by starting with all edges and adding them in until there is a tree that includes all vertices.
+
+9. What are the differences between Prim’s and Dijkstra’s algorithms?
+Ans: Both Prim’s and Dijkstra’s algorithms are used to find the shortest path between two nodes in a graph. However, Dijkstra’s algorithm is used when all the edge weights are non-negative, while Prim’s algorithm can be used with any kind of edge weights. Prim’s algorithm is also faster than Dijkstra’s algorithm when the graph is dense.
+
+9. What is the relationship between Connectivity and Spanning Trees?
+Ans: Connectivity is a property of a graph that indicates whether there is a path between any two vertices in the graph. A spanning tree is a tree that includes all the vertices of the graph and some of the edges. The edges included in the spanning tree are those that are necessary to connect all the vertices.
 ```
 Source:
 https://www.programiz.com/dsa/kruskal-algorithm
