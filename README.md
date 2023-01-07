@@ -92,6 +92,7 @@ public class PracticeDijkstra
             for (int v = 0; v < count; v++)
             {
                 // node that has not been visited, and is connected to curr, and (currToStart + currToNext < nextToStart)
+                // shorter path found
                 if (!visitedVertex[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v]))
                 {
                     distance[v] = distance[u] + graph[u][v]; // update shorter path
